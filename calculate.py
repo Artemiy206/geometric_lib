@@ -7,21 +7,22 @@ sizes = {}
 
 
 def calc(fig, func, size):
+    '''
+        Вычисляет результат для заданной фигуры и функции.
 
+        Параметры:
+        fig (str): Название фигуры (например, 'circle' или 'square').
+        func (str): Название функции (например, 'perimeter' или 'area').
+        size (list): Список размеров, передаваемых в функцию.
 
-	'''
-	    Вычисляет результат для заданной фигуры и функции.
+        Вывод:
+        Выводит результат вычисления в консоль.
+    '''
+    assert fig in figs
+    assert func in funcs
 
-	    Параметры:
-	    fig (str): Название фигуры (например, 'circle' или 'square').
-	    func (str): Название функции (например, 'perimeter' или 'area').
-	    size (list): Список размеров, передаваемых в функцию.
-
-	    Вывод:
-	    Выводит результат вычисления в консоль.
-	'''
-	assert fig in figs
-	assert func in funcs
+    result = eval(f'{fig}.{func}(*{size})')
+    return result
 
 
 if __name__ == "__main__":
@@ -36,18 +37,6 @@ if __name__ == "__main__":
         func = input(f"Enter function name, avaliable are {funcs}:\n")
 
     while len(size) != sizes.get(f"{func}-{fig}", 1):
-        size = list(
-            map(
-                int,
-                input(
-                    "Input "
-                    "figure "
-                    "sizes "
-                    "separated "
-                    "by "
-                    "space, "
-                    "1 "
-                    "for "
-                    "circle and square\n").split(' ')))
+        size = list(map(int, input("Input figure sizes separated by space, 1 for circle and square\n").split(' ')))
 
     calc(fig, func, size)
