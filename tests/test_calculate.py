@@ -8,7 +8,7 @@ class TestCircle(unittest.TestCase):
 
     def test_calc_circle_perimetr(self):
         fig = 'circle'
-        func = 'perimetr'
+        func = 'perimeter'
         size = [4]
         size1 = 4
         expected_perimetr = 2 * math.pi * size1
@@ -26,7 +26,7 @@ class TestCircle(unittest.TestCase):
 
     def test_zero_calc_circle_perimetr(self):
         fig = 'circle'
-        func = 'perimetr'
+        func = 'perimeter'
         size = [0]
         size1 = 0
         expected_perimetr = 2 * math.pi * size1
@@ -44,7 +44,7 @@ class TestCircle(unittest.TestCase):
 
     def test_negative_calc_circle_perimetr(self):
         fig = 'circle'
-        func = 'perimetr'
+        func = 'perimeter'
         size = [-4]
         size1 = -4
         expected_perimetr = 2 * math.pi * size1
@@ -65,7 +65,7 @@ class TestSquare(unittest.TestCase):
 
     def test_calc_square_perimetr(self):
         fig = 'square'
-        func = 'perimetr'
+        func = 'perimeter'
         size = [3]
         size1 = 3
         expected_perimetr = 4 * size1
@@ -83,7 +83,7 @@ class TestSquare(unittest.TestCase):
 
     def test_zero_calc_square_perimetr(self):
         fig = 'square'
-        func = 'perimetr'
+        func = 'perimeter'
         size = [0]
         size1 = 0
         expected_perimetr = 4 * size1
@@ -101,7 +101,7 @@ class TestSquare(unittest.TestCase):
 
     def test_negative_calc_square_perimetr(self):
         fig = 'square'
-        func = 'perimetr'
+        func = 'perimeter'
         size = [-3]
         size1 = -3
         expected_perimetr = 4 * size1
