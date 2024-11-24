@@ -47,7 +47,7 @@ class TestTriangle(unittest.TestCase):
 
     def test_negative_perimeter(self):
         a = -2
-        b = 1
+        b = 2
         c = -8
         expected_perimeter = a + b + c
         result = perimeter(a, b, c)
