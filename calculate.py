@@ -47,6 +47,8 @@ if __name__ == "__main__":
                                    "sizes "
                                    "separated "
                                    "by "
-                                   "space, 1 for circle and square\n").split(' ')))
+                                   "space, "
+                                   "1 "
+                                   "for circle and square\n").split(' ')))
 
     calc(fig, func, size)
