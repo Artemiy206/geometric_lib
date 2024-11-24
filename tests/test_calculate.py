@@ -38,7 +38,7 @@ class TestCircle(unittest.TestCase):
         func = 'area'
         size = [0]
         size1 = 0
-        expected_area = math.pi * size * size1
+        expected_area = math.pi * size1 * size1
         result = calc(fig, func, size)
         self.assertEqual(result, expected_area)
 
@@ -56,7 +56,7 @@ class TestCircle(unittest.TestCase):
         func = 'area'
         size = [-5]
         size1 = -5
-        expected_area = math.pi * size * size
+        expected_area = math.pi * size1 * size1
         result = calc(fig, func, size)
         self.assertEqual(result, expected_area)
 
