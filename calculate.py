@@ -3,7 +3,12 @@ import square
 
 figs = ['circle', 'square']
 funcs = ['perimeter', 'area']
-sizes = {}
+sizes = {
+    'circle-perimeter': 1,
+    'circle-area': 1,
+    'square-perimeter': 1,
+    'square-area': 1,
+}
 
 
 def calc(fig, func, size):
