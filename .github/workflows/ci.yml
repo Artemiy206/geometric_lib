@@ -1,0 +1,48 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+      - release
+  pull_request:
+    branches:
+      - master
+      - release
+      - develop
+
+jobs:
+  test-and-lint:
+    runs-on: ubuntu-latest
+
+    env:
+      FULL_NAME: "Копылов Артемий Даниилович"
+      GROUP: "М3117"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Show personal information
+        run: |
+          echo "Full Name: ${{ env.FULL_NAME }}"
+          echo "Group: ${{ env.GROUP }}"
+          echo "GitHub Username: ${{ github.actor }}"
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run unit tests
+        run: python -m unittest discover
+
+      - name: Run linter
+        run: |
+          pip install flake8
+          flake8 .
