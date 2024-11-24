@@ -7,10 +7,21 @@ sizes = {}
 
 
 def calc(fig, func, size):
-    assert fig in figs
-    assert func in funcs
-    result = eval(f'{fig}.{func}(*{size})')
-    return result
+
+
+	'''
+	    Вычисляет результат для заданной фигуры и функции.
+
+	    Параметры:
+	    fig (str): Название фигуры (например, 'circle' или 'square').
+	    func (str): Название функции (например, 'perimeter' или 'area').
+	    size (list): Список размеров, передаваемых в функцию.
+
+	    Вывод:
+	    Выводит результат вычисления в консоль.
+	'''
+	assert fig in figs
+	assert func in funcs
 
 
 if __name__ == "__main__":
