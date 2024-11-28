@@ -1,44 +1,54 @@
-import circle
-import square
-
+import circle  # noqa: F401
+import square  # noqa: F401
 
 figs = ['circle', 'square']
 funcs = ['perimeter', 'area']
-sizes = {}
+sizes = {
+    'circle-perimeter': 1,
+    'circle-area': 1,
+    'square-perimeter': 1,
+    'square-area': 1,
+}
+
 
 def calc(fig, func, size):
-	'''
-	    Вычисляет результат для заданной фигуры и функции.
+    '''
+        Вычисляет результат для заданной фигуры и функции.
 
-	    Параметры:
-	    fig (str): Название фигуры (например, 'circle' или 'square').
-	    func (str): Название функции (например, 'perimeter' или 'area').
-	    size (list): Список размеров, передаваемых в функцию.
+        Параметры:
+        fig (str): Название фигуры (например, 'circle' или 'square').
+        func (str): Название функции (например, 'perimeter' или 'area').
+        size (list): Список размеров, передаваемых в функцию.
 
-	    Вывод:
-	    Выводит результат вычисления в консоль.
-	'''
-	assert fig in figs
-	assert func in funcs
+        Вывод:
+        Выводит результат вычисления в консоль.
+    '''
+    assert fig in figs
+    assert func in funcs
 
-	result = eval(f'{fig}.{func}(*{size})')
-	print(f'{func} of {fig} is {result}')
+    result = eval(f'{fig}.{func}(*{size})')
+    return result
+
 
 if __name__ == "__main__":
-	func = ''
-	fig = ''
-	size = list()
-    
-	while fig not in figs:
-		fig = input(f"Enter figure name, avaliable are {figs}:\n")
-	
-	while func not in funcs:
-		func = input(f"Enter function name, avaliable are {funcs}:\n")
-	
-	while len(size) != sizes.get(f"{func}-{fig}", 1):
-		size = list(map(int, input("Input figure sizes separated by space, 1 for circle and square\n").split(' ')))
-	
-	calc(fig, func, size)
+    func = ''
+    fig = ''
+    size = list()
 
+    while fig not in figs:
+        fig = input(f"Enter figure name, avaliable are {figs}:\n")
 
+    while func not in funcs:
+        func = input(f"Enter function name, avaliable are {funcs}:\n")
 
+    while len(size) != sizes.get(f"{func}-{fig}", 1):
+        size = list(map(int, input("Input "
+                                   "figure "
+                                   "sizes "
+                                   "separated "
+                                   "by "
+                                   "space, "
+                                   "1 "
+                                   "for circle and square\n").split(' ')))
+
+    calc(fig, func, size)
