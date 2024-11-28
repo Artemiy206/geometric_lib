@@ -118,5 +118,28 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(result, expected_area)
 
 
+class TestCalcNegative(unittest.TestCase):
+
+    def test_invalid_figure(self):
+        with self.assertRaises(AssertionError):
+            calc("triangle", "perimeter", [5])
+
+    def test_invalid_function(self):
+        with self.assertRaises(AssertionError):
+            calc("circle", "volume", [5])
+
+    def test_empty_size(self):
+        with self.assertRaises(TypeError):
+            calc("circle", "perimeter", [])
+
+    def test_extra_size_args(self):
+        with self.assertRaises(TypeError):
+            calc("circle", "perimeter", [5, 6])
+
+    def test_non_numeric_size(self):
+        with self.assertRaises(TypeError):
+            calc("circle", "perimeter", ["abc"])
+
+
 if __name__ == '__main__':
     unittest.main()
